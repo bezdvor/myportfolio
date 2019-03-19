@@ -12,8 +12,7 @@
             <div class="col-10 no-gutters">
                 <ul class="headerList">
                     <?php foreach ($categories as $categoryItem) { ?>
-                        <li class="headerItem"><a
-                                    href="/<?= $categoryItem['id']; ?>"><?= $categoryItem['name']; ?></a>
+                        <li class="headerItem"><a href="/<?= $categoryItem['id']; ?>"><?= $categoryItem['name']; ?></a>
                         </li>
                     <? } ?>
                 </ul>
@@ -22,9 +21,6 @@
         <div class="w-100 headBackLine"></div>
         <div class="row">
             <div class="col-sm-12">
-<!--                <pre>-->
-<!--                    --><?//= var_dump($designList); ?>
-<!--                </pre>-->
                 <?php foreach ($designList as $design): ?>
                     <div class="desCard">
                         <div class="imgWrap"><img class="imgnews" src="<?= $design['img']; ?>"

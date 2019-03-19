@@ -6,10 +6,10 @@ class Pagination
 
     public function __construct($itemsCount, $countOnPage, $activePage, $paginationPath)
     {
-        $this->itemsCount = $itemsCount;
-        $this->countOnPage = $countOnPage;
-        $this->activePage = $activePage;
-        $this->lihksCount = ceil($itemsCount/$countOnPage);//count of links in pagination (in bottom)
+        $this->itemsCount = $itemsCount; //количество всех записей в таблице
+        $this->countOnPage = $countOnPage;//количество записей на одной странице
+        $this->activePage = $activePage;// номер активной страницы
+        $this->lihksCount = ceil($itemsCount/$countOnPage);//количество
         $this->paginationPath = $paginationPath;
     }
 

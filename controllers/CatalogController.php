@@ -8,27 +8,32 @@
 
 class CatalogController
 {
-    public function actionIndex()
-    {
-        $categories = Category::getCategoriesList();
-        $designList = Design::getDesignList();
-        require_once(ROOT . '/views/site/index.php');
-        return true;
-    }
+//    public function actionIndex()
+//    {
+//        $categories = Category::getCategoriesList();
+//        $designList = Design::getDesignList();
+//        require_once(ROOT . '/views/site/index.php');
+//        return true;
+//    }
 
-    public function actionCategory($categoryId, $page = 1)
+    public function actionCategory($params)
     {
+        $id = intval($params[0]);
+//        $pageNumber = intval($params[1]);
+//        if (!$pageNumber){
+//            $pageNumber = 1;
+//        }
+//        $countOnPage = 12;
+//        $designItemCount = ($pageNumber - 1) * $countOnPage;
+
         $categories = Category::getCategoriesList();
-        $categoryDesigns = Design::getDesignListByCategory($categoryId, $page);
-        $total = Design::getTotalDesignInCategory($categoryId);
-        $pagination = new Pagination($total, $page, Design::SHOW_BY_DEFAULT, 'page-');
+        $categoryDesigns = Category::getDesignByCategoryId($id);
         require_once(ROOT . '/views/site/category.php');
-        return true;
     }
-    public function actionView($productId){
-        $categories = Category::getCategoriesList();
-        $designItem = Design::getDesignById($productId);
-        require_once (ROOT . '/views/site/view.php');
-        return true;
-    }
+//    public function actionView($productId){
+//        $categories = Category::getCategoriesList();
+//        $designItem = Design::getDesignById($productId);
+//        require_once (ROOT . '/views/site/view.php');
+//        return true;
+//    }
 }

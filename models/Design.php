@@ -8,9 +8,9 @@
 
 class Design
 {
-    public static function getDesigns($start, $countOnPage){
+    public static function getDesigns(){
         $conn = Db::getConnection();
-        $sql = "SELECT id, title, img, descr from mydesign order by id DESC limit $start, $countOnPage";
+        $sql = "SELECT id, title, img, descr from mydesign order by id DESC";
         $result = $conn->query($sql);
         $data = $result->fetch_all(MYSQLI_ASSOC);
         return $data;
